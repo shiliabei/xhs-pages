@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小红书风格 GitHub Pages</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#discover" aria-label="首页">小红书</a>
+
+      <nav class="side-nav" aria-label="主导航">
+        <button class="side-item active" data-section="discover">
+          <span class="side-icon">⌂</span><span>发现</span>
+        </button>
+        <button class="side-item" data-section="live">
+          <span class="side-icon">▣</span><span>直播</span>
+        </button>
+        <button class="side-item" data-section="publish">
+          <span class="side-icon">＋</span><span>发布</span>
+        </button>
+        <button class="side-item" data-section="notice">
+          <span class="side-icon">♧</span><span>通知</span>
+        </button>
+        <button class="side-item" data-section="me">
+          <img class="side-avatar" src="assets/avatars/my-avatar.png" alt="我的头像">
+          <span>我</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="plain-link" data-section="more">☰ 更多</button>
+        <button class="plain-link" data-section="about">ⓘ 关于我们</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="搜索小红书" autocomplete="off" />
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="top-links">
+          <button class="text-link" data-section="creator">创作中心</button>
+          <button class="text-link" data-section="business">业务合作</button>
+        </div>
+      </header>
+
+      <section id="discoverSection" class="page-section show">
+        <div id="categoryTabs" class="category-tabs" aria-label="分类筛选"></div>
+        <div id="statsLine" class="stats-line"></div>
+        <div id="cardGrid" class="card-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="placeholderSection" class="page-section placeholder-page" hidden>
+        <div class="placeholder-card">
+          <p class="placeholder-kicker">功能框架</p>
+          <h1 id="placeholderTitle">待开发</h1>
+          <p id="placeholderText">这里已经预留了入口，后续可以继续添加真实功能。</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="detailModal" class="modal" aria-hidden="true">
+    <button id="modalClose" class="modal-close" aria-label="关闭详情">×</button>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <section class="modal-media">
+        <button id="prevMedia" class="media-arrow media-prev" aria-label="上一张">‹</button>
+        <img id="modalImage" src="" alt="" />
+        <video id="modalVideo" controls playsinline></video>
+        <button id="nextMedia" class="media-arrow media-next" aria-label="下一张">›</button>
+        <div id="mediaCounter" class="media-counter">1/1</div>
+        <div id="mediaDots" class="media-dots"></div>
+      </section>
+
+      <section class="modal-info">
+        <div class="author-row">
+          <img id="modalAvatar" class="author-avatar" src="" alt="作者头像" />
+          <div>
+            <div id="modalAuthor" class="author-name"></div>
+            <div id="modalMeta" class="meta-text"></div>
+          </div>
+          <button class="follow-btn">关注</button>
+        </div>
+
+        <div class="post-body">
+          <h2 id="modalTitle"></h2>
+          <p id="modalContent"></p>
+          <div id="modalTags" class="tag-list"></div>
+        </div>
+
+        <div class="comment-header">
+          <span id="commentTitle">共 0 条评论</span>
+        </div>
+        <div id="commentList" class="comment-list"></div>
+
+        <footer class="modal-actions">
+          <button id="likeBtn" class="action-btn">♡ <span id="likeCount">0</span></button>
+          <button id="favBtn" class="action-btn">☆ <span id="favCount">0</span></button>
+          <button class="action-btn">💬 <span id="commentCount">0</span></button>
+          <button class="action-btn">↗ 分享</button>
+        </footer>
+      </section>
+    </article>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
