@@ -1,5 +1,5 @@
 :root {
-  --brand: #ff2442;
+  --brand: #1677ff;
   --text: #222;
   --muted: #777;
   --light: #f6f6f6;
@@ -160,7 +160,7 @@ button {
 }
 
 .search-wrap input:focus {
-  box-shadow: 0 0 0 2px rgba(255, 36, 66, .12);
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, .14);
 }
 
 .search-icon {
@@ -335,7 +335,7 @@ button {
   padding: 44px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: linear-gradient(135deg, #fff, #fff7f8);
+  background: linear-gradient(135deg, #fff, #f1f7ff);
   box-shadow: 0 10px 40px rgba(0, 0, 0, .06);
 }
 
@@ -612,7 +612,7 @@ button {
 
 .action-btn.active {
   color: var(--brand);
-  background: #fff0f2;
+  background: #eef6ff;
   font-weight: 800;
 }
 

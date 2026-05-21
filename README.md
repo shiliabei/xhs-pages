@@ -1,4 +1,4 @@
-# 小红书风格 GitHub Pages 静态网站模板
+# 小蓝书风格 GitHub Pages 静态网站模板
 
 这是一个纯静态模板，适合直接部署到 GitHub Pages。它不需要数据库、不需要后端服务器，核心内容都在 `js/data.js` 里维护。
 
