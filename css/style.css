@@ -175,7 +175,7 @@ button {
 .top-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 18px;
   white-space: nowrap;
 }
 
@@ -186,6 +186,34 @@ button {
 
 .text-link:hover {
   color: var(--brand);
+}
+
+.login-pill {
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 800;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #333;
+  font-size: 14px;
+}
+
+#userName {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.danger-link {
+  color: #d93025;
+  font-size: 14px;
 }
 
 .page-section {
@@ -555,11 +583,16 @@ button {
   padding: 0 22px 18px;
 }
 
+.comment-empty {
+  min-height: 96px;
+}
+
 .comment-item {
   display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-columns: 34px minmax(0, 1fr) auto;
   gap: 10px;
   padding: 12px 0;
+  position: relative;
 }
 
 .comment-item.reply {
@@ -583,6 +616,53 @@ button {
 .comment-text {
   margin-top: 4px;
   line-height: 1.58;
+}
+
+.comment-more {
+  position: relative;
+  align-self: start;
+}
+
+.comment-more-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  color: #888;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.comment-more-btn:hover,
+.comment-more-btn[aria-expanded="true"] {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.comment-menu {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  z-index: 4;
+  min-width: 86px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, .12);
+}
+
+.comment-delete-btn {
+  width: 100%;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 6px;
+  color: var(--brand);
+  text-align: left;
+  font-size: 14px;
+}
+
+.comment-delete-btn:hover {
+  background: #fff1f1;
 }
 
 .comment-meta {
@@ -614,6 +694,129 @@ button {
   color: var(--brand);
   background: #eef6ff;
   font-weight: 800;
+}
+
+.comment-form {
+  min-height: 62px;
+  padding: 10px 20px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.comment-form input {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  outline: 0;
+}
+
+.comment-form input:focus {
+  border-color: rgba(22, 119, 255, .45);
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, .1);
+}
+
+.comment-form input:disabled {
+  background: #f7f7f7;
+  color: #999;
+}
+
+.comment-form button,
+.auth-form button {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 800;
+}
+
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, .38);
+}
+
+.auth-modal.show {
+  display: grid;
+}
+
+.auth-card {
+  position: relative;
+  width: min(420px, 100%);
+  padding: 30px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.auth-card h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.auth-tip {
+  margin: 0 0 20px;
+  color: #666;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.auth-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #777;
+  font-size: 28px;
+}
+
+.auth-close:hover {
+  background: var(--light);
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 7px;
+  color: #555;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.auth-form input {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: 0;
+}
+
+.auth-switch {
+  margin-top: 16px;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.auth-message {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: #d93025;
+  font-size: 14px;
 }
 
 .empty-state {
@@ -723,7 +926,9 @@ button {
   }
 
   .top-links {
-    display: none;
+    justify-content: flex-end;
+    gap: 12px;
+    overflow-x: auto;
   }
 
   .category-tabs {
