@@ -6,6 +6,7 @@ const els = {
   statsLine: document.querySelector('#statsLine'),
   cardGrid: document.querySelector('#cardGrid'),
   discoverSection: document.querySelector('#discoverSection'),
+  meSection: document.querySelector('#meSection'),
   placeholderSection: document.querySelector('#placeholderSection'),
   placeholderTitle: document.querySelector('#placeholderTitle'),
   placeholderText: document.querySelector('#placeholderText'),
@@ -174,6 +175,14 @@ function showSection(section) {
   if (section === 'discover') {
     els.discoverSection.hidden = false;
     els.discoverSection.classList.add('show');
+    els.meSection.hidden = true;
+    els.placeholderSection.hidden = true;
+    return;
+  }
+
+  if (section === 'me') {
+    els.discoverSection.hidden = true;
+    els.meSection.hidden = false;
     els.placeholderSection.hidden = true;
     return;
   }
@@ -182,6 +191,7 @@ function showSection(section) {
   els.placeholderTitle.textContent = page.title;
   els.placeholderText.textContent = page.text;
   els.discoverSection.hidden = true;
+  els.meSection.hidden = true;
   els.placeholderSection.hidden = false;
 }
 
