@@ -3,6 +3,7 @@
 ![alt text](效果图片.png)
 
 网站链接：[text](https://shiliabei.github.io/xhs-pages/)
+网站链接：https://shiliabei.github.io/xhs-pages/
 
 这是一个纯静态模板，适合直接部署到 GitHub Pages。它不需要数据库、不需要后端服务器，核心内容都在 `js/data.js` 里维护。
 
